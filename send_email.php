@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $recipient = "chevahouse.official@gmail.com";
+    $recipient = "abdurrahmanilyas6@gmail.com";
     $subject = "New contact form message from $name";
 
     $email_content = "Name: $name\n";
