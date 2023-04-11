@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // }
 
     try{
-        mail($recipient, $subject, $email_content, $email_headers)
+        mail($recipient, $subject, $email_content, $email_headers);
     }catch(Exception $e){
         http_response_code(500);
         echo $e->getMessage();
