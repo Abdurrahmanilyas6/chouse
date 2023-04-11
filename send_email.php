@@ -28,7 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // }
 
     try{
-        mail($recipient, $subject, $email_content, $email_headers);
+        if (mail($recipient, $subject, $email_content, $email_headers)) {
+            http_response_code(200);
+            echo "Terima kasih! Pesan Anda telah terkirim.";
+        } else {
+            http_response_code(500);
+            echo "Oops! Terjadi kesalahan dan pesan Anda tidak dapat dikirim. Silakan coba lagi nanti.";
+        }
     }catch(Exception $e){
         http_response_code(500);
         echo $e->getMessage();
